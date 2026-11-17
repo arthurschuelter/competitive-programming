@@ -16,22 +16,30 @@ class Solution:
 
     # Time: O(n)
     # Space: O(n + n + n) => O(n)
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
-        l_mult, r_mult = 1, 1
-        n = len(nums)
-        l_arr = [0] * n
-        r_arr = [0] * n
 
-        for i in range(n):
-            j = n - i -1
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        hasZero = 0
+        p = 1
+        for n in nums:
+            if (n == 0):
+                hasZero += 1
+                continue
+            p *= n
+        
+        if hasZero > 1:
+            return [0] * len(nums)
 
-            l_arr[i] = l_mult
-            l_mult *= nums[i]
+        ans = [p] * len(nums)
+        for i in range(len(nums)):
+            if hasZero == 0:
+                ans[i] = ans[i] // nums[i]
+            elif hasZero == 1 and nums[i] != 0:
+                ans[i] = 0
+            else:
+                ans[i] = p
+            
 
-            r_arr[j] = r_mult
-            r_mult *= nums[j]
-
-        return [l * r for l, r in zip(l_arr, r_arr)]
+        return ans
 
 
 import pytest
