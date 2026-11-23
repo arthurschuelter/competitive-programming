@@ -4,7 +4,6 @@ class Solution:
         char_set = set(s)
 
         for c in char_set:
-            # print(f"Testing with [{c}]")
             count_k = 0
             l = 0
 
@@ -29,13 +28,9 @@ import pytest
 solution = Solution()
 
 @pytest.mark.parametrize("s, k, expected", [
-    # Test case 1 
     ("XYYX", 2, 4),
-    # Test case 2
     ("AAABABB", 1, 5),
 ])
 
 def test_solution(s, k, expected):
-    result = solution.characterReplacement(s, k)
-
-    assert result == expected
+    assert solution.characterReplacement(s, k) == expected
