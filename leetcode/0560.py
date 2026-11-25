@@ -17,14 +17,10 @@ import pytest
 solution = Solution()
 
 @pytest.mark.parametrize("nums, k, expected", [
-    # Test case 1
     ([1, 1, 1], 2, 2),
-    # Test case 2
     ([1, 2, 3], 3, 2),
     ([1], 0, 0),
 ])
 
 def test_solution(nums, k, expected):
-    result = solution.subarraySum(nums, k)
-
-    assert result == expected
+    assert solution.subarraySum(nums, k) == expected

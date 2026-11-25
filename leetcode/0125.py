@@ -23,15 +23,10 @@ import pytest
 solution = Solution()
 
 @pytest.mark.parametrize("s, expected", [
-    # Test case 1
     ("A man, a plan, a canal: Panama", True),
-    # Test case 2
     ("race a car", False),
-    # Test case 3
     ("hello", False)
 ])
 
 def test_solution(s, expected):
-    result = solution.isPalindrome(s)
-
-    assert result == expected
+    assert solution.isPalindrome(s) == expected

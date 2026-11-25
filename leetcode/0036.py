@@ -50,7 +50,6 @@ import pytest
 solution = Solution()
 
 @pytest.mark.parametrize("nums, expected", [
-    # Test case 1 
     ([["5","3",".",".","7",".",".",".","."]
     ,["6",".",".","1","9","5",".",".","."]
     ,[".","9","8",".",".",".",".","6","."]
@@ -60,7 +59,7 @@ solution = Solution()
     ,[".","6",".",".",".",".","2","8","."]
     ,[".",".",".","4","1","9",".",".","5"]
     ,[".",".",".",".","8",".",".","7","9"]], True),
-    # Test case 2
+
     ([["8","3",".",".","7",".",".",".","."]
     ,["6",".",".","1","9","5",".",".","."]
     ,[".","9","8",".",".",".",".","6","."]
@@ -73,6 +72,4 @@ solution = Solution()
 ])
 
 def test_solution(nums, expected):
-    result = solution.isValidSudoku(nums)
-
-    assert result == expected
+    assert solution.isValidSudoku(nums) == expected

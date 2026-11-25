@@ -31,15 +31,10 @@ import pytest
 solution = Solution()
 
 @pytest.mark.parametrize("s, t, expected", [
-    # Test case 1 
     ("anagram", "nagaram", True),
-    # Test case 2
     ("rat", "car", False),
-    # Test case 3
     ("listen", "silent", True)
 ])
 
 def test_solution(s, t, expected):
-    result = solution.isAnagram(s, t)
-
-    assert result == expected
+    assert solution.isAnagram(s, t) == expected
